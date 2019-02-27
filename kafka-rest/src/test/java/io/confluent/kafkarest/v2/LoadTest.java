@@ -61,7 +61,7 @@ public class LoadTest {
 
     private Capture<Properties> capturedConsumerConfig;
 
-    private long requestTimeoutMs = 1000;
+    private long requestTimeoutMs = 10000;
 
     private Random random = new Random();
 
