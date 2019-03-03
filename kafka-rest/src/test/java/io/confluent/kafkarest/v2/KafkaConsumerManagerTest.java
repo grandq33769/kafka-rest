@@ -355,10 +355,10 @@ public class KafkaConsumerManagerTest {
                 });
 
         // backoff is 250
-        Thread.sleep(100);
+        Thread.sleep(1000);
         // backoff should be in place right now. the read task should be delayed and re-ran until the max.bytes or timeout is hit
         assertEquals(1, consumerManager.delayedReadTasks.size());
-        Thread.sleep(100);
+        Thread.sleep(1000);
         assertEquals(1, consumerManager.delayedReadTasks.size());
     }
 
@@ -380,7 +380,7 @@ public class KafkaConsumerManagerTest {
                     }
                 });
 
-        Thread.sleep(100);
+        Thread.sleep(1000);
         KafkaConsumerManager.RunnableReadTask readTask = consumerManager.delayedReadTasks.peek();
         if (readTask == null) {
             fail("Could not get read task in time. It should not be null");
